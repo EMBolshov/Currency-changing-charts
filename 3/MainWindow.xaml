@@ -1,0 +1,32 @@
+﻿<Window x:Class="_3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:charting="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+        Title="MainWindow" Height="500" Width="700">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="vallist" Width="150" Grid.Column="0"/>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <RadioButton Name="pie" Content="Pie" Margin="10" Checked="pie_Checked" />
+                <RadioButton Name="area" Content="Area" Margin="10" Checked="pie_Checked"/>
+                <RadioButton Name="bar" Content="Bar" Margin="10" Checked="pie_Checked"/>
+                <RadioButton Name="line" Content="Line" Margin="10" Checked="pie_Checked"/>
+                <RadioButton Name="column" Content="Column" Margin="10" Checked="pie_Checked"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <Calendar Name="dates" SelectionMode="MultipleRange" />
+                <Button Content="Показать данные" Height="50" Name="getdata" Width="175" Margin="50,0,0,0" Click="getdata_Click" />
+            </StackPanel>
+            <charting:Chart  Grid.Row="2" Name="Charts"/>
+        </Grid>
+    </Grid>
+</Window>
